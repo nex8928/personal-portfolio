@@ -30,6 +30,12 @@ npm install
 npm run dev
 ```
 
+## Live Site
+
+The portfolio is set up for GitHub Pages at:
+
+https://nex8928.github.io/personal-portfolio/
+
 ## Available Scripts
 
 - `npm run dev` - start the development server
