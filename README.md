@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository powers my personal portfolio site. It is a React + TypeScript + Vite application built to present my experience, selected projects, technical skills, and academic background in a polished, terminal-inspired layout.
 
-Currently, two official plugins are available:
+The site is organized as a small multi-page portfolio with a strong visual identity: an animated hero, featured project cards, a timeline-style experience view, and a skills matrix with academic highlights. Most of the content is driven from a single data file so it is easy to update and reuse.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Highlights
 
-## React Compiler
+- Home page with an animated hero, core stack, and featured projects
+- Experience timeline with impact metrics and role summaries
+- Projects archive with bento-style cards and technology tags
+- Skills page with technical categories, education details, and milestones
+- Responsive layout with scroll-triggered reveal animations and subtle motion
+- Resume download CTA and route-based navigation across the portfolio
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript
+- React Router
+- Vite
+- ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/nex8928/personal-portfolio.git
+cd personal-portfolio
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev` - start the development server
+- `npm run build` - type-check and build the production bundle
+- `npm run lint` - run ESLint across the project
+- `npm run preview` - preview the production build locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Project Structure
+
+- `src/App.tsx` - application shell and route setup
+- `src/pages/` - page-level portfolio sections
+- `src/components/` - shared UI components
+- `src/data/mockData.ts` - portfolio content, links, and section data
+- `src/hooks/useScrollAnimation.ts` - scroll reveal behavior used across pages
+
+## Customizing the Portfolio
+
+If you want to reuse this as a starter for your own portfolio, begin with `src/data/mockData.ts`. That file contains the hero copy, featured projects, experience entries, skill categories, education details, milestones, and navigation labels.
+
+The social links and resume CTA can also be updated in the same content layer or within the relevant components if you want to point them to your own profiles and files.
