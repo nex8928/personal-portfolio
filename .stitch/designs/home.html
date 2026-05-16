@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nipun Gahane // AI &amp; Cloud-Native Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#00363a",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "surface-container": "#20201f",
+                      "on-error": "#690005",
+                      "surface-dim": "#131313",
+                      "outline": "#8e9192",
+                      "surface-tint": "#c9c6c5",
+                      "on-surface-variant": "#c4c7c7",
+                      "on-secondary-container": "#006a70",
+                      "outline-variant": "#444748",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-primary": "#313030",
+                      "surface-container-low": "#1c1b1b",
+                      "on-primary-container": "#7b7979",
+                      "surface-container-lowest": "#0e0e0e",
+                      "primary": "#c9c6c5",
+                      "inverse-primary": "#5f5e5e",
+                      "background": "#131313",
+                      "on-background": "#e5e2e1",
+                      "secondary-fixed-dim": "#00dbe7",
+                      "on-tertiary-fixed": "#161e00",
+                      "tertiary-fixed": "#c3f400",
+                      "on-tertiary-fixed-variant": "#3c4d00",
+                      "surface-variant": "#353535",
+                      "inverse-on-surface": "#313030",
+                      "surface-container-highest": "#353535",
+                      "primary-container": "#0a0a0a",
+                      "tertiary-container": "#070c00",
+                      "secondary-container": "#00f1fe",
+                      "surface": "#131313",
+                      "secondary": "#ddfcff",
+                      "surface-bright": "#393939",
+                      "on-secondary-fixed-variant": "#004f54",
+                      "on-tertiary-container": "#688300",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-fixed": "#002022",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#74f5ff",
+                      "tertiary": "#abd600",
+                      "on-surface": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-fixed-dim": "#abd600",
+                      "on-tertiary": "#283500",
+                      "on-primary-fixed": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "24px",
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "margin-desktop": "80px",
+                      "section-gap": "160px"
+              },
+              "fontFamily": {
+                      "mono-label": [
+                              "JetBrains Mono"
+                      ],
+                      "mono-code": [
+                              "JetBrains Mono"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-main": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-label": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "mono-code": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-main": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background-color: rgba(32, 32, 31, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bracket-header::before { content: "[ "; color: #c9c6c5; opacity: 0.5; }
+        .bracket-header::after { content: " ]"; color: #c9c6c5; opacity: 0.5; }
+    </style>
+</head>
+<body class="text-on-surface bg-background font-body-main antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-outline-variant">
+<div class="font-display-lg text-headline-md text-on-surface tracking-tighter">Nipun Gahane</div>
+<div class="hidden md:flex items-center gap-6 font-mono-label text-mono-label">
+<a class="text-tertiary border-b border-tertiary pb-1 scale-95 transition-transform" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-2 py-1" href="#">Experience</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-2 py-1" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-2 py-1" href="#">Skills</a>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-tertiary transition-colors">code</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-tertiary transition-colors">terminal</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-section-gap">
+<div class="lg:col-span-8 flex flex-col justify-center">
+<div class="font-mono-code text-mono-code text-tertiary mb-4">SYSTEM.INIT()</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">
+                    NIPUN GAHANE <br/> <span class="text-on-surface-variant">// AI &amp; CLOUD-NATIVE ENGINEER</span>
+</h1>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-2xl mb-8">
+                    Building production-grade RAG pipelines and scalable cloud architectures. Engineering high-performance distributed systems with a focus on reliability and advanced ML integration.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container border border-secondary text-primary font-mono-code text-mono-code px-6 py-3 hover:bg-secondary/10 transition-colors flex items-center gap-2">
+                        View Experience <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="glass-panel text-on-surface font-mono-code text-mono-code px-6 py-3 hover:bg-white/5 transition-colors flex items-center gap-2">
+                        Download CV <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-4 hidden lg:flex items-center justify-center relative">
+<div class="w-full aspect-square glass-panel rounded-full flex items-center justify-center relative overflow-hidden border-tertiary/30">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(171,214,0,0.1)_0%,transparent_70%)]"></div>
+<span class="material-symbols-outlined text-6xl text-tertiary opacity-50 absolute">memory</span>
+<div class="absolute w-full h-[1px] bg-tertiary/20 animate-[spin_4s_linear_infinite]"></div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Chips -->
+<section class="mb-section-gap">
+<h2 class="font-mono-code text-mono-code text-on-surface-variant mb-6 bracket-header">CORE_STACK</h2>
+<div class="flex flex-wrap gap-3">
+<span class="border border-tertiary text-tertiary font-mono-label text-mono-label px-3 py-1 bg-transparent">Python</span>
+<span class="border border-tertiary text-tertiary font-mono-label text-mono-label px-3 py-1 bg-transparent">Java</span>
+<span class="border border-tertiary text-tertiary font-mono-label text-mono-label px-3 py-1 bg-transparent">AWS</span>
+<span class="border border-secondary text-secondary font-mono-label text-mono-label px-3 py-1 bg-transparent">LLMs</span>
+<span class="border border-secondary text-secondary font-mono-label text-mono-label px-3 py-1 bg-transparent">Kubernetes</span>
+<span class="border border-secondary text-secondary font-mono-label text-mono-label px-3 py-1 bg-transparent">Docker</span>
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-3 py-1 bg-transparent hover:border-tertiary transition-colors cursor-pointer">+ View All Skills</span>
+</div>
+</section>
+<!-- Featured Projects Bento Grid -->
+<section>
+<div class="flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface bracket-header">FEATURED_PROJECTS</h2>
+<a class="font-mono-code text-mono-code text-tertiary hover:underline flex items-center gap-1" href="#">ALL_PROJECTS <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Project 1: Large Span -->
+<div class="glass-panel md:col-span-8 p-6 flex flex-col group relative overflow-hidden transition-all hover:border-tertiary/50">
+<div class="absolute top-0 right-0 bg-tertiary/10 text-tertiary font-mono-label text-mono-label px-2 py-1 border-b border-l border-tertiary/30">[REF-RAG-01]</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-mono-label text-mono-label text-secondary">RAG_PIPELINE</span>
+<span class="text-outline-variant">|</span>
+<span class="font-mono-code text-mono-code text-on-surface-variant text-xs">LATENCY: &lt;200ms</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">Enterprise Knowledge Search API</h3>
+<p class="font-body-main text-body-main text-on-surface-variant mb-6 max-w-xl">
+                        Architected a high-throughput Retrieval-Augmented Generation system using Python, FastAPI, and Pinecone. Implemented semantic caching reducing API costs by 40% while maintaining high accuracy for technical queries.
+                    </p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-2 py-0.5 text-xs">Python</span>
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-2 py-0.5 text-xs">FastAPI</span>
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-2 py-0.5 text-xs">Pinecone</span>
+</div>
+</div>
+<!-- Project 2: Side Panel -->
+<div class="glass-panel md:col-span-4 p-6 flex flex-col group relative overflow-hidden transition-all hover:border-secondary/50">
+<div class="absolute top-0 right-0 bg-secondary/10 text-secondary font-mono-label text-mono-label px-2 py-1 border-b border-l border-secondary/30">[REF-SYS-02]</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-mono-label text-mono-label text-tertiary">CLOUD_ARCH</span>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2 group-hover:text-secondary transition-colors">Distributed Event Bus</h3>
+<p class="font-body-main text-body-main text-on-surface-variant mb-6 text-sm">
+                        Built a resilient event-driven architecture processing 1M+ daily events using Java, Spring Boot, and Apache Kafka on AWS infrastructure.
+                    </p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-2 py-0.5 text-xs">Java</span>
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-2 py-0.5 text-xs">AWS</span>
+<span class="border border-outline-variant text-on-surface-variant font-mono-label text-mono-label px-2 py-0.5 text-xs">Kafka</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-unit bg-surface-container-lowest border-t border-outline-variant text-primary font-mono-code text-mono-code mt-auto">
+<div class="text-on-surface-variant">
+            © 2024 NIPUN GAHANE [REF-DEPL-01]
+        </div>
+<div class="flex gap-6 font-mono-label text-mono-label text-tertiary">
+<a class="text-on-surface-variant hover:text-tertiary underline transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary underline transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary underline transition-colors opacity-80 hover:opacity-100" href="#">Email</a>
+</div>
+</footer>
+</body></html>

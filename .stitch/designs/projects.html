@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - Nipun Gahane</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#00363a",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "surface-container": "#20201f",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "outline": "#8e9192",
+                        "surface-tint": "#c9c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#006a70",
+                        "outline-variant": "#444748",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-container": "#7b7979",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#c9c6c5",
+                        "inverse-primary": "#5f5e5e",
+                        "background": "#131313",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed-dim": "#00dbe7",
+                        "on-tertiary-fixed": "#161e00",
+                        "tertiary-fixed": "#c3f400",
+                        "on-tertiary-fixed-variant": "#3c4d00",
+                        "surface-variant": "#353535",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#0a0a0a",
+                        "tertiary-container": "#070c00",
+                        "secondary-container": "#00f1fe",
+                        "surface": "#131313",
+                        "secondary": "#ddfcff",
+                        "surface-bright": "#393939",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "on-tertiary-container": "#688300",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#002022",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#74f5ff",
+                        "tertiary": "#abd600",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#abd600",
+                        "on-tertiary": "#283500",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "80px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "mono-label": ["JetBrains Mono"],
+                        "mono-code": ["JetBrains Mono"],
+                        "display-lg": ["Geist"],
+                        "body-main": ["Inter"],
+                        "headline-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "mono-label": ["13px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "mono-code": ["14px", { "lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-main": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-main flex flex-col pt-16">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-outline-variant font-mono-label text-mono-label">
+<div class="font-display-lg text-headline-md text-on-surface tracking-tighter">Nipun Gahane</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-3 rounded" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-3 rounded" href="#">Experience</a>
+<a class="text-tertiary border-b border-tertiary pb-1 py-2 px-3 hover:bg-white/5 transition-all duration-300" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-3 rounded" href="#">Skills</a>
+</div>
+<div class="flex gap-unit items-center text-primary">
+<button class="p-2 hover:bg-white/5 rounded transition-all duration-300">
+<span class="material-symbols-outlined">code</span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded transition-all duration-300">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-margin-desktop">
+<div class="mb-gutter max-w-3xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">[Projects_Archive]</h1>
+<p class="font-mono-code text-mono-code text-on-surface-variant">A collection of engineering projects focused on AI infrastructure, scalable backend systems, and data processing. Selected works demonstrate full-stack capabilities and deep technical implementation.</p>
+</div>
+<!-- Asymmetric Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project 1: Finance RAG App -->
+<div class="md:col-span-8 glass-panel border border-white/10 p-6 rounded-lg relative group transition-all duration-300 hover:border-secondary/50">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono-label text-mono-label text-outline-variant uppercase">SYS.01 // RAG</span>
+<span class="font-mono-label text-mono-label text-secondary opacity-70">[REF-FIN-01]</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Finance RAG App (SEC 10-K Q&amp;A)</h3>
+<p class="font-mono-code text-mono-code text-on-surface-variant mb-6 opacity-80">Mar 2026</p>
+<p class="font-body-main text-body-main text-on-background mb-8 max-w-2xl">
+                    Engineered a Retrieval-Augmented Generation system designed for complex financial document analysis. Specifically tailored to parse, index, and query SEC 10-K filings, providing accurate, context-aware answers to dense financial queries using state-of-the-art vector embedding techniques.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 border border-secondary text-secondary font-mono-label text-mono-label rounded">Python</span>
+<span class="px-2 py-1 border border-secondary text-secondary font-mono-label text-mono-label rounded">LangChain</span>
+<span class="px-2 py-1 border border-secondary text-secondary font-mono-label text-mono-label rounded">ChromaDB</span>
+</div>
+<div class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<a class="text-secondary hover:text-white transition-colors flex items-center gap-2 font-mono-label text-mono-label" href="#">
+<span class="material-symbols-outlined text-[20px]">link</span> VIEW_SOURCE
+                    </a>
+</div>
+</div>
+<!-- Project 2: Cloud-Native Inventory -->
+<div class="md:col-span-4 glass-panel border border-white/10 p-6 rounded-lg relative group transition-all duration-300 hover:border-tertiary/50">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono-label text-mono-label text-outline-variant uppercase">SYS.02 // DISTRIBUTED</span>
+<span class="font-mono-label text-mono-label text-tertiary opacity-70">[REF-INV-02]</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-tight font-semibold text-on-surface mb-2">Cloud-Native Inventory System</h3>
+<p class="font-mono-code text-mono-code text-on-surface-variant mb-6 opacity-80">Mar 2026</p>
+<p class="font-body-main text-body-main text-on-background mb-8">
+                    Architected a highly scalable inventory management platform utilizing a microservices approach. Deployed on AWS with containerized orchestration ensuring high availability and fault tolerance.
+                </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">React</span>
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">Spring Boot</span>
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">AWS</span>
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">Docker</span>
+</div>
+<div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<a class="text-tertiary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 3: LLM Finetuning -->
+<div class="md:col-span-5 glass-panel border border-white/10 p-6 rounded-lg relative group transition-all duration-300 hover:border-secondary/50">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono-label text-mono-label text-outline-variant uppercase">SYS.03 // ML_OPS</span>
+<span class="font-mono-label text-mono-label text-secondary opacity-70">[REF-LLM-03]</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-tight font-semibold text-on-surface mb-2">Efficient LLM Finetuning (Gemma 2B)</h3>
+<p class="font-mono-code text-mono-code text-on-surface-variant mb-6 opacity-80">Oct 2025</p>
+<p class="font-body-main text-body-main text-on-background mb-8">
+                    Implemented parameter-efficient fine-tuning (PEFT) techniques to optimize the Gemma 2B model for domain-specific tasks, significantly reducing computational overhead while maintaining inference quality.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 border border-secondary text-secondary font-mono-label text-mono-label rounded">Python</span>
+<span class="px-2 py-1 border border-secondary text-secondary font-mono-label text-mono-label rounded">PyTorch</span>
+<span class="px-2 py-1 border border-secondary text-secondary font-mono-label text-mono-label rounded">Hugging Face</span>
+</div>
+<div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<a class="text-secondary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">code</span>
+</a>
+</div>
+</div>
+<!-- Project 4: Spam Detection -->
+<div class="md:col-span-7 glass-panel border border-white/10 p-6 rounded-lg relative group transition-all duration-300 hover:border-tertiary/50">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono-label text-mono-label text-outline-variant uppercase">SYS.04 // CLASSIFICATION</span>
+<span class="font-mono-label text-mono-label text-tertiary opacity-70">[REF-SEC-04]</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Real-Time Spam Detection API</h3>
+<p class="font-mono-code text-mono-code text-on-surface-variant mb-6 opacity-80">Jan 2024</p>
+<p class="font-body-main text-body-main text-on-background mb-8 max-w-2xl">
+                    Developed a robust, low-latency API endpoint utilizing custom PyTorch neural networks to analyze and classify incoming text streams in real-time, effectively identifying and filtering malicious content patterns.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">Python</span>
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">Flask</span>
+<span class="px-2 py-1 border border-tertiary text-tertiary font-mono-label text-mono-label rounded">PyTorch</span>
+</div>
+<div class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+<a class="text-tertiary hover:text-white transition-colors flex items-center gap-2 font-mono-label text-mono-label" href="#">
+<span class="material-symbols-outlined text-[20px]">link</span> VIEW_REPO
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-unit bg-surface-container-lowest border-t border-outline-variant">
+<div class="font-mono-label text-mono-label text-tertiary">© 2024 NIPUN GAHANE [REF-DEPL-01]</div>
+<div class="flex gap-gutter font-mono-code text-mono-code text-on-surface-variant">
+<a class="hover:text-tertiary underline transition-colors transition-opacity duration-200 text-primary" href="#">GitHub</a>
+<a class="hover:text-tertiary underline transition-colors transition-opacity duration-200 text-primary" href="#">LinkedIn</a>
+<a class="hover:text-tertiary underline transition-colors transition-opacity duration-200 text-primary" href="#">Email</a>
+</div>
+</footer>
+</body></html>
