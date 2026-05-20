@@ -30,20 +30,26 @@ const Navbar: React.FC = () => {
           borderBottom: '1px solid var(--outline-variant)',
         }}
       >
-        {/* Logo */}
-        <Link
-          to="/"
-          style={{
-            fontFamily: "'Geist', sans-serif",
-            fontSize: '32px',
-            fontWeight: 600,
-            letterSpacing: '-0.01em',
-            color: 'var(--on-surface)',
-            textDecoration: 'none',
-          }}
-        >
-          Nipun Gahane
-        </Link>
+        {/* Logo and Status Badge */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <Link
+            to="/"
+            style={{
+              fontFamily: "'Geist', sans-serif",
+              fontSize: '28px',
+              fontWeight: 600,
+              letterSpacing: '-0.01em',
+              color: 'var(--on-surface)',
+              textDecoration: 'none',
+            }}
+          >
+            Nipun Gahane
+          </Link>
+          <div className="nav-links-desktop status-badge" style={{ display: 'inline-flex', padding: '4px 10px', fontSize: '11px', gap: '6px' }}>
+            <span className="status-dot-pulse" style={{ width: '6px', height: '6px' }} />
+            <span>SYS // DEPLOYED</span>
+          </div>
+        </div>
 
         {/* Desktop Nav Links */}
         <div className="nav-links-desktop" style={{ display: 'flex', alignItems: 'center', gap: 'var(--gutter)' }}>

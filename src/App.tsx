@@ -16,10 +16,34 @@ const ScrollToTop: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        const percentage = (window.scrollY / totalScroll) * 100;
+        const progressBar = document.getElementById('scroll-progress');
+        if (progressBar) {
+          progressBar.style.width = `${percentage}%`;
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <HashRouter>
       <ScrollToTop />
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      {/* Dynamic Scroll Progress Bar */}
+      <div id="scroll-progress" />
+      
+      {/* Animated Ambient Glow Backdrop */}
+      <div className="ambient-glow-container">
+        <div className="ambient-glow-1" />
+        <div className="ambient-glow-2" />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
