@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { navLinks } from '../data/mockData';
 
 const Navbar: React.FC = () => {
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Nav Links */}
-        <div className="nav-links-desktop" style={{ display: 'flex', alignItems: 'center', gap: 'var(--gutter)' }}>
+        <div className="nav-links-desktop" style={{ display: 'flex', alignItems: 'center', gap: 'var(--gutter)', position: 'relative' }}>
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
             return (
@@ -63,23 +64,36 @@ const Navbar: React.FC = () => {
                 style={{
                   color: isActive ? 'var(--tertiary)' : 'var(--on-surface-variant)',
                   textDecoration: 'none',
-                  padding: '8px 12px',
-                  borderBottom: isActive ? '1px solid var(--tertiary)' : '1px solid transparent',
-                  transition: 'all 0.3s ease',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  position: 'relative',
+                  transition: 'color 0.3s ease',
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.color = 'var(--primary)';
-                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.color = 'var(--on-surface-variant)';
-                    e.currentTarget.style.backgroundColor = 'transparent';
                   }
                 }}
               >
+                {isActive && (
+                  <motion.div
+                    layoutId="active-nav-pill"
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                      borderBottom: '2px solid var(--tertiary)',
+                      borderRadius: '4px 4px 0 0',
+                      zIndex: -1,
+                    }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  />
+                )}
                 {link.label}
               </Link>
             );
@@ -94,7 +108,7 @@ const Navbar: React.FC = () => {
               <button
                 key={icon}
                 style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', padding: '8px', borderRadius: '4px', transition: 'background 0.3s' }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                 aria-label={icon}
               >

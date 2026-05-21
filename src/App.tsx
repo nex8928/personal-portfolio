@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import ExperiencePage from './pages/ExperiencePage';
 import ProjectsPage from './pages/ProjectsPage';
 import SkillsPage from './pages/SkillsPage';
+import CustomCursor from './components/CustomCursor';
+import ParticlesBg from './components/ParticlesBg';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -34,6 +36,8 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <ScrollToTop />
+      <CustomCursor />
+      <ParticlesBg />
       {/* Dynamic Scroll Progress Bar */}
       <div id="scroll-progress" />
       
