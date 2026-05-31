@@ -72,9 +72,37 @@ const RagVisualizer: React.FC = () => {
   };
 
   return (
-    <CardTilt className="w-full max-w-[550px] h-[470px]">
-      <div className="glass-panel" style={{ width: '100%', height: '100%', padding: '20px 24px', borderRadius: '12px', display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative', boxSizing: 'border-box' }}>
-        <BorderBeam size={220} duration={8} borderWidth={1.5} colorFrom="var(--tertiary)" colorTo="var(--secondary-container)" />
+    <CardTilt className="w-full max-w-[550px] h-[480px]">
+      <div 
+        style={{
+          width: '100%',
+          height: '100%',
+          padding: '8px',
+          backgroundColor: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          borderRadius: '32px',
+          boxSizing: 'border-box',
+          position: 'relative'
+        }}
+      >
+        <BorderBeam size={240} duration={8} borderWidth={1.5} colorFrom="var(--tertiary)" colorTo="var(--secondary-container)" />
+        <div 
+          className="glass-panel" 
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            padding: '24px', 
+            borderRadius: 'calc(32px - 8px)', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '12px', 
+            backgroundColor: 'var(--surface-container-low)',
+            boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.15)',
+            boxSizing: 'border-box',
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+        >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '12px', height: '32px', boxSizing: 'border-box' }}>
           <h4 className="font-code" style={{ color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
             <span className="material-symbols-outlined" style={{ color: 'var(--tertiary)', fontSize: '20px' }}>psychology</span>
@@ -140,15 +168,16 @@ const RagVisualizer: React.FC = () => {
         </div>
 
         {/* Trigger Button */}
-        <button
-          onClick={runFlow}
+        <button 
+          onClick={runFlow} 
           disabled={pipelineState !== 'IDLE'}
-          className="cta-primary"
+          className="cta-primary" 
           style={{ width: '100%', height: '42px', justifyContent: 'center', padding: '10px', cursor: pipelineState !== 'IDLE' ? 'not-allowed' : 'pointer', opacity: pipelineState !== 'IDLE' ? 0.6 : 1, boxSizing: 'border-box' }}
         >
           <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>play_arrow</span>
           {pipelineState === 'IDLE' ? 'RUN DIAGNOSTIC FLOW' : 'RETRIEVING EMBEDDINGS...'}
         </button>
+      </div>
       </div>
     </CardTilt>
   );
@@ -202,9 +231,40 @@ const HeroSection: React.FC = () => {
 
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
           <Magnet>
-            <Link to="/experience" className="cta-primary" style={{ display: 'inline-flex' }}>
-              {heroData.ctaPrimary}
-              <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>arrow_forward</span>
+            <Link 
+              to="/experience" 
+              className="cta-primary group" 
+              style={{ 
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '6px 6px 6px 20px',
+                borderRadius: '32px',
+                backgroundColor: 'var(--tertiary)',
+                color: 'var(--on-tertiary)',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '13px',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              {heroData.ctaPrimary.toUpperCase()}
+              <div 
+                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-[1px]"
+                style={{ 
+                  width: '28px', 
+                  height: '28px', 
+                  borderRadius: '50%', 
+                  backgroundColor: 'rgba(0, 0, 0, 0.15)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: '14px', color: 'inherit' }}>arrow_forward</span>
+              </div>
             </Link>
           </Magnet>
           <Magnet>
@@ -212,11 +272,39 @@ const HeroSection: React.FC = () => {
               href="https://drive.google.com/file/d/1nTHILeGvhTsBcLqAGWyKXZb5i-zW9Bmr/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-panel cta-secondary"
-              style={{ textDecoration: 'none', display: 'inline-flex' }}
+              className="cta-secondary group"
+              style={{ 
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '6px 6px 6px 20px',
+                borderRadius: '32px',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                color: 'var(--on-surface)',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '13px',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+              }}
             >
-              {heroData.ctaSecondary}
-              <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>download</span>
+              {heroData.ctaSecondary.toUpperCase()}
+              <div 
+                className="transition-transform duration-300 group-hover:translate-y-[1px]"
+                style={{ 
+                  width: '28px', 
+                  height: '28px', 
+                  borderRadius: '50%', 
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: '14px', color: 'inherit' }}>download</span>
+              </div>
             </a>
           </Magnet>
         </div>
@@ -274,11 +362,17 @@ const FeaturedProjects: React.FC = () => {
               gridColumn: `span ${p.colSpan}`,
             }}
           >
+            {/* Outer Shell */}
             <div
-              className="glass-panel card-glow"
               style={{
-                width: '100%', height: '100%', padding: '32px', display: 'flex', flexDirection: 'column',
-                position: 'relative', overflow: 'hidden', borderRadius: '12px',
+                width: '100%',
+                height: '100%',
+                padding: '8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                borderRadius: '24px',
+                boxSizing: 'border-box',
+                position: 'relative',
               }}
             >
               <BorderBeam
@@ -289,33 +383,54 @@ const FeaturedProjects: React.FC = () => {
                 colorFrom={p.accentColor === 'lime' ? 'var(--tertiary)' : 'var(--secondary-container)'}
                 colorTo="transparent"
               />
-              {/* Accent corner badge */}
-              <div style={{
-                position: 'absolute', top: 0, right: 0, padding: '6px 12px', fontSize: '13px',
-                fontFamily: "'JetBrains Mono'", fontWeight: 500, letterSpacing: '0.05em',
-                color: p.accentColor === 'lime' ? 'var(--tertiary)' : 'var(--secondary-container)',
-                backgroundColor: p.accentColor === 'lime' ? 'rgba(171,214,0,0.08)' : 'rgba(0,241,254,0.08)',
-                borderBottom: '1px solid', borderLeft: '1px solid',
-                borderColor: p.accentColor === 'lime' ? 'rgba(171,214,0,0.2)' : 'rgba(0,241,254,0.2)',
-              }}>
-                {p.refId}
-              </div>
+              
+              {/* Inner Core */}
+              <div
+                className="glass-panel card-glow"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  padding: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: 'calc(24px - 8px)',
+                  backgroundColor: 'var(--surface-container-low)',
+                  boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.15)',
+                  boxSizing: 'border-box',
+                }}
+              >
+                {/* Accent corner badge */}
+                <div style={{
+                  position: 'absolute', top: 0, right: 0, padding: '6px 12px', fontSize: '12px',
+                  fontFamily: "'JetBrains Mono'", fontWeight: 500, letterSpacing: '0.05em',
+                  color: p.accentColor === 'lime' ? 'var(--tertiary)' : 'var(--secondary-container)',
+                  backgroundColor: p.accentColor === 'lime' ? 'rgba(171,214,0,0.08)' : 'rgba(0,241,254,0.08)',
+                  borderBottom: '1px solid', borderLeft: '1px solid',
+                  borderColor: p.accentColor === 'lime' ? 'rgba(171,214,0,0.2)' : 'rgba(0,241,254,0.2)',
+                  borderRadius: '0 0 0 8px',
+                  zIndex: 2,
+                }}>
+                  {p.refId}
+                </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                <span className="font-mono" style={{ color: p.accentColor === 'lime' ? 'var(--secondary-container)' : 'var(--tertiary)' }}>{p.sysId}</span>
-                {p.date && (
-                  <>
-                    <span style={{ color: 'var(--outline-variant)' }}>|</span>
-                    <span className="font-code" style={{ color: 'var(--on-surface-variant)', fontSize: '12px' }}>{p.date}</span>
-                  </>
-                )}
-              </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', zIndex: 2 }}>
+                  <span className="font-mono" style={{ color: p.accentColor === 'lime' ? 'var(--secondary-container)' : 'var(--tertiary)' }}>{p.sysId}</span>
+                  {p.date && (
+                    <>
+                      <span style={{ color: 'var(--outline-variant)' }}>|</span>
+                      <span className="font-code" style={{ color: 'var(--on-surface-variant)', fontSize: '11px' }}>{p.date}</span>
+                    </>
+                  )}
+                </div>
 
-              <h3 className="font-headline" style={{ fontSize: p.colSpan > 4 ? '28px' : '20px', color: 'var(--on-surface)', marginBottom: '12px' }}>{p.title}</h3>
-              <p className="font-body" style={{ color: 'var(--on-surface-variant)', marginBottom: '24px', fontSize: p.colSpan > 4 ? '16px' : '14px', lineHeight: 1.7 }}>{p.description}</p>
+                <h3 className="font-headline" style={{ fontSize: p.colSpan > 4 ? '26px' : '20px', color: 'var(--on-surface)', marginBottom: '12px', zIndex: 2 }}>{p.title}</h3>
+                <p className="font-body" style={{ color: 'var(--on-surface-variant)', marginBottom: '24px', fontSize: p.colSpan > 4 ? '15px' : '13px', lineHeight: 1.7, zIndex: 2 }}>{p.description}</p>
 
-              <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {p.tags.map((t) => <span key={t} className="tech-tag neutral" style={{ fontSize: '12px', padding: '2px 8px' }}>{t}</span>)}
+                <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '8px', zIndex: 2 }}>
+                  {p.tags.map((t) => <span key={t} className="tech-tag neutral" style={{ fontSize: '11px', padding: '2px 8px' }}>{t}</span>)}
+                </div>
               </div>
             </div>
           </CardTilt>
@@ -418,38 +533,65 @@ const SystemTerminal: React.FC = () => {
   };
 
   return (
-    <section className="terminal-container" style={{ marginBottom: 'var(--section-gap)', padding: '0', display: 'flex', flexDirection: 'column' }}>
-      <div className="terminal-header">
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <span className="terminal-dot" style={{ backgroundColor: '#ff5f56' }} />
-          <span className="terminal-dot" style={{ backgroundColor: '#ffbd2e' }} />
-          <span className="terminal-dot" style={{ backgroundColor: '#27c93f' }} />
-          <span style={{ color: 'var(--on-surface-variant)', fontSize: '12px', fontWeight: 'bold', marginLeft: '6px' }}>nipun_gahane@sys-console:~</span>
-        </div>
-        <span className="material-symbols-outlined" style={{ fontSize: '16px', color: 'var(--outline)' }}>terminal</span>
-      </div>
-      <div style={{ padding: '20px', height: '240px', minHeight: '240px', maxHeight: '240px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '6px', color: 'var(--on-surface)', fontSize: '13px', lineHeight: '1.5', boxSizing: 'border-box' }}>
-        {history.map((line, idx) => (
-          <div key={idx} style={{ whiteSpace: 'pre-wrap', color: line.startsWith('nipun@') ? 'var(--tertiary)' : line.includes('[OK]') ? 'var(--secondary-container)' : 'var(--on-surface-variant)' }}>
-            {line}
+    <section 
+      style={{ 
+        marginBottom: 'var(--section-gap)', 
+        padding: '8px', 
+        backgroundColor: 'rgba(255, 255, 255, 0.03)', 
+        border: '1px solid rgba(255, 255, 255, 0.08)', 
+        borderRadius: '32px',
+        boxSizing: 'border-box',
+        position: 'relative'
+      }}
+    >
+      <BorderBeam size={260} duration={14} borderWidth={1.5} colorFrom="var(--tertiary)" colorTo="transparent" />
+      
+      <div 
+        className="terminal-container" 
+        style={{ 
+          margin: 0, 
+          padding: '0', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          borderRadius: 'calc(32px - 8px)', 
+          overflow: 'hidden',
+          backgroundColor: 'var(--surface-container-low)',
+          boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.15)',
+          boxSizing: 'border-box'
+        }}
+      >
+        <div className="terminal-header">
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span className="terminal-dot" style={{ backgroundColor: '#ff5f56' }} />
+            <span className="terminal-dot" style={{ backgroundColor: '#ffbd2e' }} />
+            <span className="terminal-dot" style={{ backgroundColor: '#27c93f' }} />
+            <span style={{ color: 'var(--on-surface-variant)', fontSize: '12px', fontWeight: 'bold', marginLeft: '6px' }}>nipun_gahane@sys-console:~</span>
           </div>
-        ))}
-        <div ref={terminalEndRef} />
-      </div>
-      <form onSubmit={handleCommand} className="terminal-input-container">
-        <div className="terminal-input-line">
-          <span className="terminal-prompt">nipun@portfolio:~$</span>
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Type 'help' or 'status'..."
-            className="terminal-textbox"
-            autoComplete="off"
-            spellCheck="false"
-          />
+          <span className="material-symbols-outlined" style={{ fontSize: '16px', color: 'var(--outline)' }}>terminal</span>
         </div>
-      </form>
+        <div style={{ padding: '20px', height: '240px', minHeight: '240px', maxHeight: '240px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '6px', color: 'var(--on-surface)', fontSize: '13px', lineHeight: '1.5', boxSizing: 'border-box' }}>
+          {history.map((line, idx) => (
+            <div key={idx} style={{ whiteSpace: 'pre-wrap', color: line.startsWith('nipun@') ? 'var(--tertiary)' : line.includes('[OK]') ? 'var(--secondary-container)' : 'var(--on-surface-variant)' }}>
+              {line}
+            </div>
+          ))}
+          <div ref={terminalEndRef} />
+        </div>
+        <form onSubmit={handleCommand} className="terminal-input-container">
+          <div className="terminal-input-line">
+            <span className="terminal-prompt">nipun@portfolio:~$</span>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Type 'help' or 'status'..."
+              className="terminal-textbox"
+              autoComplete="off"
+              spellCheck="false"
+            />
+          </div>
+        </form>
+      </div>
     </section>
   );
 };

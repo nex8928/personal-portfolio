@@ -148,70 +148,100 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience: exp }) => {
           gridColumn: 'span 8',
         }}
       >
-        <article className="cyber-card" onMouseMove={handleMouseMove} style={{ width: '100%', height: '100%', padding: '48px', borderRadius: '8px', position: 'relative', overflow: 'hidden' }}>
+        {/* Outer Shell */}
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            padding: '8px',
+            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '24px',
+            boxSizing: 'border-box',
+            position: 'relative'
+          }}
+        >
           <BorderBeam size={260} duration={16} borderWidth={1.5} colorFrom="var(--tertiary)" colorTo="var(--secondary-container)" />
-          {/* Glow line on top */}
-          <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', background: 'linear-gradient(to right, transparent, var(--tertiary), transparent)', opacity: 0, transition: 'opacity 0.5s', zIndex: 2 }} />
+          
+          {/* Inner Core */}
+          <article 
+            className="cyber-card" 
+            onMouseMove={handleMouseMove} 
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              padding: '32px', 
+              borderRadius: 'calc(24px - 8px)', 
+              position: 'relative', 
+              overflow: 'hidden',
+              backgroundColor: 'var(--surface-container-low)',
+              boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.15)',
+              boxSizing: 'border-box'
+            }}
+          >
+            {/* Glow line on top */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', background: 'linear-gradient(to right, transparent, var(--tertiary), transparent)', opacity: 0, transition: 'opacity 0.5s', zIndex: 2 }} />
 
-          {/* Inner Content with z-index wrapper */}
-          <div style={{ position: 'relative', zIndex: 2 }}>
-            {/* Mobile date */}
-            <div className="timeline-date-mobile" style={{ display: 'none', marginBottom: '16px' }}>
-              <span className="font-code" style={{ color: 'var(--tertiary)' }}>{exp.dateRange}</span>
-            </div>
-
-            {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '32px', borderBottom: '1px solid rgba(68,71,72,0.5)', paddingBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
-              <div>
-                <h2 className="font-headline" style={{ fontSize: '32px', color: 'var(--on-surface)', marginBottom: '8px' }}>{exp.role}</h2>
-                <h3 className="font-body" style={{ color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '18px', color: 'var(--outline)' }}>{exp.companyIcon}</span>
-                  {exp.company}
-                </h3>
+            {/* Inner Content with z-index wrapper */}
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              {/* Mobile date */}
+              <div className="timeline-date-mobile" style={{ display: 'none', marginBottom: '16px' }}>
+                <span className="font-code" style={{ color: 'var(--tertiary)' }}>{exp.dateRange}</span>
               </div>
-              <div className="font-mono" style={{ color: 'var(--outline)', backgroundColor: 'var(--surface-container)', padding: '4px 12px', border: '1px solid rgba(68,71,72,0.5)' }}>{exp.systemId}</div>
-            </div>
 
-            {/* Metrics with animated entry */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
-              {exp.metrics.map((m) => (
-                <motion.div
-                  key={m.label}
-                  variants={metricVariants}
-                  style={{
-                    backgroundColor: 'rgba(19,19,19,0.5)',
-                    border: '1px solid rgba(68,71,72,0.5)',
-                    padding: '16px',
-                    borderRadius: '4px'
-                  }}
-                >
-                  <span className="font-code" style={{ color: m.color === 'lime' ? 'var(--tertiary)' : 'var(--secondary-container)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', fontSize: '15px' }}>
-                    <span className="material-symbols-outlined" style={{ fontSize: '16px', color: 'inherit' }}>{m.icon}</span>
-                    {m.label}
-                  </span>
-                  <span className="font-body" style={{ color: 'var(--on-surface-variant)', fontSize: '14px' }}>{m.description}</span>
-                </motion.div>
-              ))}
-            </div>
+              {/* Header */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '32px', borderBottom: '1px solid rgba(68,71,72,0.5)', paddingBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
+                <div>
+                  <h2 className="font-headline" style={{ fontSize: '32px', color: 'var(--on-surface)', marginBottom: '8px' }}>{exp.role}</h2>
+                  <h3 className="font-body" style={{ color: 'var(--on-surface-variant)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px', color: 'var(--outline)' }}>{exp.companyIcon}</span>
+                    {exp.company}
+                  </h3>
+                </div>
+                <div className="font-mono" style={{ color: 'var(--outline)', backgroundColor: 'var(--surface-container)', padding: '4px 12px', border: '1px solid rgba(68,71,72,0.5)' }}>{exp.systemId}</div>
+              </div>
 
-            {/* Bullets */}
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-              {exp.bullets.map((b, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <span className="font-code" style={{ color: 'var(--tertiary)', marginTop: '4px', flexShrink: 0 }}>&gt;</span>
-                  <p className="font-body" style={{ color: 'var(--on-surface)', lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: b }} />
-                </li>
-              ))}
-            </ul>
+              {/* Metrics with animated entry */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+                {exp.metrics.map((m) => (
+                  <motion.div 
+                    key={m.label} 
+                    variants={metricVariants}
+                    style={{ 
+                      backgroundColor: 'rgba(19,19,19,0.5)', 
+                      border: '1px solid rgba(68,71,72,0.5)', 
+                      padding: '16px', 
+                      borderRadius: '4px' 
+                    }}
+                  >
+                    <span className="font-code" style={{ color: m.color === 'lime' ? 'var(--tertiary)' : 'var(--secondary-container)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', fontSize: '15px' }}>
+                      <span className="material-symbols-outlined" style={{ fontSize: '16px', color: 'inherit' }}>{m.icon}</span>
+                      {m.label}
+                    </span>
+                    <span className="font-body" style={{ color: 'var(--on-surface-variant)', fontSize: '14px' }}>{m.description}</span>
+                  </motion.div>
+                ))}
+              </div>
 
-            {/* Tags */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingTop: '16px', borderTop: '1px solid rgba(68,71,72,0.3)' }}>
-              {exp.tags.map((t) => (
-                <span key={t.label} className={`tech-tag ${t.color}`} style={{ backgroundColor: 'rgba(19,19,19,0.5)', backdropFilter: 'blur(4px)' }}>{t.label}</span>
-              ))}
+              {/* Bullets */}
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+                {exp.bullets.map((b, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <span className="font-code" style={{ color: 'var(--tertiary)', marginTop: '4px', flexShrink: 0 }}>&gt;</span>
+                    <p className="font-body" style={{ color: 'var(--on-surface)', lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: b }} />
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tags */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingTop: '16px', borderTop: '1px solid rgba(68,71,72,0.3)' }}>
+                {exp.tags.map((t) => (
+                  <span key={t.label} className={`tech-tag ${t.color}`} style={{ backgroundColor: 'rgba(19,19,19,0.5)', backdropFilter: 'blur(4px)' }}>{t.label}</span>
+                ))}
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </CardTilt>
     </motion.div>
   );

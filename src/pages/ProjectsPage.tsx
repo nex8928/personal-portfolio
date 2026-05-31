@@ -146,10 +146,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project: p }) => {
       style={{ gridColumn: `span ${p.colSpan}`, display: 'flex', flexDirection: 'column' }}
     >
       <CardTilt className="w-full h-full">
+        {/* Outer Shell */}
         <div
-          className={`cyber-card ${p.accentColor === 'cyan' ? 'accent-cyan' : ''}`}
-          onMouseMove={handleMouseMove}
-          style={{ width: '100%', height: '100%', padding: '32px', display: 'flex', flexDirection: 'column', position: 'relative', cursor: 'default', borderRadius: '8px', overflow: 'hidden' }}
+          style={{
+            width: '100%',
+            height: '100%',
+            padding: '8px',
+            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '24px',
+            boxSizing: 'border-box',
+            position: 'relative'
+          }}
         >
           <BorderBeam
             size={180}
@@ -158,17 +166,38 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project: p }) => {
             colorFrom={accent}
             colorTo="transparent"
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px', zIndex: 2 }}>
-            <span className="font-mono" style={{ color: 'var(--outline)', textTransform: 'uppercase' }}>{p.sysId} // {p.category}</span>
-            <span className="font-mono" style={{ color: accent, opacity: 0.7 }}>{p.refId}</span>
-          </div>
-          <h3 className="font-headline" style={{ fontSize: p.colSpan > 5 ? '32px' : '24px', color: 'var(--on-surface)', marginBottom: '8px', zIndex: 2 }}>{p.title}</h3>
-          <p className="font-code" style={{ color: 'var(--on-surface-variant)', marginBottom: '24px', opacity: 0.8, zIndex: 2 }}>{p.date}</p>
-          <p className="font-body" style={{ color: 'var(--on-background)', marginBottom: '32px', maxWidth: '640px', lineHeight: 1.7, zIndex: 2 }}>{p.description}</p>
-          <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '8px', zIndex: 2 }}>
-            {p.tags.map((t) => (
-              <span key={t} className={`tech-tag ${p.accentColor}`} style={{ fontSize: '13px' }}>{t}</span>
-            ))}
+          
+          {/* Inner Core */}
+          <div
+            className={`cyber-card ${p.accentColor === 'cyan' ? 'accent-cyan' : ''}`}
+            onMouseMove={handleMouseMove}
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              padding: '24px', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              position: 'relative', 
+              cursor: 'default', 
+              borderRadius: 'calc(24px - 8px)', 
+              overflow: 'hidden',
+              backgroundColor: 'var(--surface-container-low)',
+              boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.15)',
+              boxSizing: 'border-box'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px', zIndex: 2 }}>
+              <span className="font-mono" style={{ color: 'var(--outline)', textTransform: 'uppercase', fontSize: '11px' }}>{p.sysId} // {p.category}</span>
+              <span className="font-mono" style={{ color: accent, opacity: 0.7, fontSize: '11px' }}>{p.refId}</span>
+            </div>
+            <h3 className="font-headline" style={{ fontSize: p.colSpan > 5 ? '28px' : '22px', color: 'var(--on-surface)', marginBottom: '8px', zIndex: 2 }}>{p.title}</h3>
+            <p className="font-code" style={{ color: 'var(--on-surface-variant)', marginBottom: '20px', opacity: 0.8, zIndex: 2, fontSize: '12px' }}>{p.date}</p>
+            <p className="font-body" style={{ color: 'var(--on-background)', marginBottom: '24px', maxWidth: '640px', lineHeight: 1.7, zIndex: 2, fontSize: '14px' }}>{p.description}</p>
+            <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '8px', zIndex: 2 }}>
+              {p.tags.map((t) => (
+                <span key={t} className={`tech-tag ${p.accentColor}`} style={{ fontSize: '12px' }}>{t}</span>
+              ))}
+            </div>
           </div>
         </div>
       </CardTilt>
